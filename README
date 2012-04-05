@@ -1,0 +1,29 @@
+SharpGroups is (going to be) some sort of implementation of distributed messaging algorithms in C#.
+
+Dependencies
+------------
+	NUnit
+	Moq
+	Protocol Buffers
+
+Build
+-----
+1) Download references:
+	nuget install -o lib packages.config
+2) Build:
+Windows:
+	msbuild
+or use Visual Studio
+
+Linux:
+	xbuild
+
+Project under early development. Dunno even where will it is leading.
+
+If you require assistance, just drop me an e-mail.
+
+specs:
+http://lpd.epfl.ch/knezevic/da10/da10-ReliableBroadcast.pdf
+http://www.gsd.inesc-id.pt/~ler/docencia/tfd0405/bib/LivroTFD.pdf
+http://lpd.epfl.ch/knezevic/da10/da10-Introduction.pdf
+

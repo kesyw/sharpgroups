@@ -1,0 +1,7 @@
+bin
+obj
+lib
+*.suo
+*.sln.*.user
+_ReSharper.*
+TestResult.xml
