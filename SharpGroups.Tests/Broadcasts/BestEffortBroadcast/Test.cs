@@ -11,10 +11,10 @@ namespace SharpGroups.Tests.Broadcasts.BestEffortBroadcast
         [Test]
         public void DummyTest ()
         {
-            var perfectLinkMock = new Mock<IPerfectLink> ();
-            IBestEffortBroadcast bebcast = new BestEffortBroadcastImpl (perfectLinkMock.Object);
+            var perfectLinkMock = new Mock<IPerfectLink<object, string>> ();
+            IBestEffortBroadcast<object, string> bebcast = new BestEffortBroadcastImpl<object, string> (perfectLinkMock.Object);
             var anyReceived = false;
-            bebcast.Receive += delegate (object source, object target, byte[] message)
+            bebcast.Receive += delegate (object source, object target, string message)
                 {
                     anyReceived = true;
                 };

@@ -1,6 +1,6 @@
 ﻿namespace SharpGroups.Links.StubbornLinks
 {
-    interface IStubbornLink : ILink
+    interface IStubbornLink<TP,TM> : ILink<TP,TM>
     {
     }
 }

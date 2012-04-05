@@ -1,10 +1,25 @@
 ﻿namespace SharpGroups.Links
 {
-    public delegate void ReceiveDelegate (object source, object target, byte[] message);
+    /// <summary>
+    /// Standard link receive delegate.
+    /// </summary>
+    public delegate void ReceiveDelegate<in TP, in TM> (TP source, TP target, TM message);
 
-    public interface ILink
+    /// <summary>
+    /// Standard link interface.
+    /// </summary>
+    /// <typeparam name="TP">process ID type</typeparam>
+    /// <typeparam name="TM">message type</typeparam>
+    public interface ILink<TP,TM>
     {
-        void Send (object source, object target, byte[] message);
-        event ReceiveDelegate Receive;
+        /// <summary>
+        /// Sends a message to a given process. No guarantees.
+        /// </summary>
+        void Send (TP source, TP target, TM message);
+
+        /// <summary>
+        /// Standard link delivery event.
+        /// </summary>
+        event ReceiveDelegate<TP,TM> Receive;
     }
 }
