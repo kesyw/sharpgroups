@@ -1,6 +1,6 @@
 ﻿namespace SharpGroups.Links.FairLossLinks
 {
-    interface IFairLossLink<TP, TM> : ILink<TP, TM>
+    interface IFairLossLink<TProcess, TMessage> : ILink<TProcess, TMessage>
     {
     }
 }
